@@ -1,3 +1,5 @@
+package creature.monster;
+
 public abstract class Monster implements Creature {
     private String name;
     private int hp;
@@ -10,6 +12,13 @@ public abstract class Monster implements Creature {
         this.name = name;
         this.suffix = suffix;
         this.hp = hp;
+    }
+
+    public void run() {
+        System.out.println(this.name + this.suffix + "は逃げ出した！");
+    }
+    public void die() {
+        System.out.println(this.name + this.suffix + "を倒した！");
     }
 
     @Override

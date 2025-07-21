@@ -1,3 +1,8 @@
+import creature.monster.Goblin;
+import creature.monster.Matango;
+import creature.monster.Monster;
+import creature.monster.Slime;
+
 import java.util.ArrayList;
 public class GameMaster {
     public static void main(String[] args) {

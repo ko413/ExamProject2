@@ -1,3 +1,5 @@
+package creature.monster;
+
 public class Matango extends Monster{
     public Matango(char suffix, int hp) {
         super("お化けキノコ", suffix, hp);
