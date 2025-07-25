@@ -9,7 +9,7 @@ public class SuperHero extends Hero {
         this.setHp(hero.getHp() - 30);
     }
     public void attack(Creature target) {
-        int damage = this.getWeapon().getDamage() * 2.5;
+        int damage = (int)(this.getWeapon().getDamage() * 2.5);
         System.out.println(this.getName() + "は" + this.getWeapon().getName() + this.getWeapon().attackMessage());
         System.out.println(target.getName() + "に" + damage + "のダメージを与えた！");
         target.setHp(target.getHp() - damage);

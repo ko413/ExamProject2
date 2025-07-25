@@ -16,14 +16,10 @@ import java.util.Random;
 public class GameMaster {
     public static void main(String[] args) {
 
-        // =======================================
-        // 1. パーティとモンスターの準備
-        // =======================================
         ArrayList<Character> party = new ArrayList<>();
-        // 仕様に合わせてキャラクターを作成します
-        party.add(new Hero("勇者", 120));
-        party.add(new Wizard("魔法使い", 80, 25));
-        party.add(new Thief("盗賊", 90));
+        party.add(new Hero("勇者", 120, new Sword()));
+        party.add(new Wizard("魔法使い", 80, 25, new Wand()));
+        party.add(new Thief("盗賊", 90, new Dagger()));
 
         ArrayList<Monster> monsters = new ArrayList<>();
         Random rand = new Random();
@@ -46,14 +42,10 @@ public class GameMaster {
             }
         }
 
-        // =======================================
-        // 2. メインの戦闘ループ
-        // =======================================
         int turn = 1;
         while (!party.isEmpty() && !monsters.isEmpty()) {
             System.out.println("\n----- " + turn + "ターン目 -----");
 
-            // --- ステータス表示 ---
             System.out.println("【味方パーティ】");
             for (Character c : party) {
                 c.showStatus();
@@ -64,12 +56,8 @@ public class GameMaster {
             }
             System.out.println();
 
-            // =======================================
-            // 3. 味方の行動フェーズ
-            // =======================================
             for (int i = 0; i < party.size(); i++) {
                 if (monsters.isEmpty()) break;
-
                 Character currentCharacter = party.get(i);
                 if (!currentCharacter.isAlive()) continue;
 
@@ -157,15 +145,11 @@ public class GameMaster {
                 System.out.println();
             }
 
-            // =======================================
-            // 4. 敵の行動フェーズ
-            // =======================================
             if (monsters.isEmpty() || party.isEmpty()) break;
 
             System.out.println("--- 敵のターン ---");
             for (Monster m : monsters) {
                 if (party.isEmpty()) break;
-
                 Character target = party.get(rand.nextInt(party.size()));
                 m.attack(target);
 
@@ -178,12 +162,9 @@ public class GameMaster {
             turn++;
         }
 
-        // =======================================
-        // 5. 戦闘結果の表示
-        // =======================================
         System.out.println("\n----- 戦闘終了 -----");
         if (monsters.isEmpty()) {
-            System.out.println("敵を全て倒した！" + party.get(0).getName() + "達は勝利した！");
+            System.out.println("敵を全て倒した！味方パーティは勝利した！");
         } else {
             System.out.println("味方パーティは全滅してしまった…");
         }

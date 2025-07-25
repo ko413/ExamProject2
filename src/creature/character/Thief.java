@@ -19,8 +19,8 @@ public  class Thief extends Character {
         }
     }
 
-    public boolean guard() {
-        return guard;
+    public void guard() {
+        this.guard = true;
     }
 
     public void setHp(int hp) {
