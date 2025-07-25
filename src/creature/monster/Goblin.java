@@ -1,6 +1,8 @@
 package creature.monster;
 
-public class Goblin extends Monster{
+import creature.Monster;
+
+public class Goblin extends Monster {
     public Goblin(char suffix, int hp) {
         super("ゴブリン", suffix, hp);
     }

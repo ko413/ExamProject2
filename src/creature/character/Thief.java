@@ -4,7 +4,7 @@ import creature.Character;
 import creature.Creature;
 import weapon.Weapon;
 public  class Thief extends Character {
-    private boolean guard = false;
+    private boolean guard;
 
     public Thief(String name, int hp, Weapon weapon) {
         super(name, hp, weapon);
@@ -19,8 +19,8 @@ public  class Thief extends Character {
         }
     }
 
-    public void guard() {
-        this.guard = true;
+    public boolean guard() {
+        return guard;
     }
 
     public void setHp(int hp) {
