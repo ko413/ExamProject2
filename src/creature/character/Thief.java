@@ -24,7 +24,7 @@ public  class Thief extends Character {
     }
 
     public void setHp(int hp) {
-        if (this.guard()) {
+        if (this.guard) {
             System.out.println("しかし、" + this.getName() + "は攻撃を回避し、ダメージが入らなかった！");
             this.guard = false;
             return;

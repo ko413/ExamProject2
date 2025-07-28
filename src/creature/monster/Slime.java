@@ -1,6 +1,7 @@
 package creature.monster;
 
 import creature.Monster;
+import creature.Creature;
 
 public final class Slime extends Monster {
     public Slime(char suffix, int hp) {

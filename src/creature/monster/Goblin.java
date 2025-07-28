@@ -1,6 +1,7 @@
 package creature.monster;
 
 import creature.Monster;
+import creature.Creature;
 
 public class Goblin extends Monster {
     public Goblin(char suffix, int hp) {

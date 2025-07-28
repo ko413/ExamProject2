@@ -1,6 +1,7 @@
 package creature.monster;
 
 import creature.Monster;
+import creature.Creature;
 
 public class Matango extends Monster {
     public Matango(char suffix, int hp) {

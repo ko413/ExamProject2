@@ -15,7 +15,7 @@ public abstract class Weapon {
     public void setName(String name) {
         this.name = name;
     }
-    public int getDamage(int damage) {
+    public int getDamage() {
         return this.damage;
     }
     public void setDamage(int damage) {

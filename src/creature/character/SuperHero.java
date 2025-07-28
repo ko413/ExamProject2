@@ -4,9 +4,9 @@ import creature.Creature;
 import weapon.Weapon;
 
 public class SuperHero extends Hero {
-    public SuperHero(Hero hero, Weapon weapon) {
-        super(hero.getName(), hero.getHp(), hero.getWeapon());
-        this.setHp(hero.getHp() - 30);
+    public SuperHero(String name, int hp, Weapon weapon) {
+        super(name, hp, weapon);
+        this.setHp(this.getHp() - 30);
     }
     public void attack(Creature target) {
         int damage = (int)(this.getWeapon().getDamage() * 2.5);
